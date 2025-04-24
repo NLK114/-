@@ -9,17 +9,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="container">
-            <span class="logo">odigo</span>
-            <nav>
-              <ul>
-                <li class="active"><a href="#">Articles</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Videos</a></li>
-                <li class="btn"><a href="#">Sign in</a></li>
-              </ul>
-            </nav>
-        </header>
+      <header class="container">
+        <span class="logo">odigo</span>
+      
+        <div class="burger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      
+        <nav id="main-nav">
+          <ul>
+            <li class="active"><a href="#">Articles</a></li>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Videos</a></li>
+            <li class="btn"><a href="#">Sign in</a></li>
+          </ul>
+        </nav>
+      </header>
      <div class="hero container">
         <div class="hero--info">
             <h1>Discover Amazing places in Japan</h1>
@@ -200,23 +207,24 @@
         </div>
       </section>
      </div>
-      <div class="video-preview" onclick="openVideo()">
-       <img src="img/video.png" alt="Preview" class="preview-img">
-         <div class="play-button">
-           &#9658;
-         </div>
+      <section class="video-section">
+       <div class="video-preview" onclick="openVideo()">
+         <img src="img/Video (1).png" alt="Preview" class="preview-img">
+           <div class="play-button">
+             &#9658;
+           </div>
        </div>
     
-      <div id="video-modal" class="modal">
+       <div id="video-modal" class="modal">
          <div class="modal-content">
            <span class="close" onclick="closeVideo()">&times;</span>
            <video id="video-player" controls autoplay>
             <source src="video/Top 5 Things to do in Osaka.mp4" type="video/mp4">
            </video>
         </div>
-      </div>
+       </div>
     
-      <footer class="footer">
+       <footer class="footer">
         <div class="footer-container">
           <div class="footer-columns">
             <div class="footer-col">
@@ -251,7 +259,9 @@
             </div>
           </div>
         </div>
-      </footer>
+       </footer>
+      </section>
+    </div>
     <script>
       function openVideo() {
         const modal = document.getElementById('video-modal');
@@ -266,6 +276,12 @@
         modal.style.display = 'none';
         video.pause();
         video.currentTime = 0;
+      }
+    </script>
+    <script>
+      function toggleMenu() {
+        const nav = document.getElementById('main-nav');
+        nav.classList.toggle('active');
       }
     </script>
 </body>
